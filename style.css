@@ -1,0 +1,50 @@
+html {
+  box-sizing: border-box;
+  background: #ffc600;
+}
+
+.main {
+	display: flex;
+	margin: 100px 100px;
+}
+
+.hole {
+	height: 100px;
+	width: 200px;
+	background-image: url(dirt.svg);
+	margin-left: 50px;
+	background-size: 100% 100%;
+	z-index: 2;
+}
+
+.krot {
+	position: absolute;
+	width: 150px;
+	z-index: 1;
+}
+
+.score {
+	text-align: center;
+	font-family: Arial;
+	font-size: 40px;
+	background: #f7a70a;
+	width: 100px;
+	padding: 30px;
+	margin-left: 100px;
+	margin-top: 20px;
+	font-family: 'Amatic SC', cursive;
+	border-radius: 20px;
+}
+
+.win {
+	color: black;
+	font-family: 'Amatic SC', cursive;
+	font-size: 80px;
+	background: #ff5500;
+	width: 500px;
+	height: 400px;
+	margin-left: 400px;
+	padding-left: 200px;
+	padding-top: 200px;
+	border-radius: 50px;
+}

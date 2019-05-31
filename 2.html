@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	
+	<div class="score">
+		СЧЕТ:
+	</div>
+	<div class="main">
+		<div class="hole"> </div>
+		<div class="hole"> </div>
+		<div class="hole"> </div>
+		<div class="hole"> </div>
+		<div class="hole"> </div>
+		<div class="hole"> </div>
+	</div>
+	<script>
+		let row = document.querySelector('.main');
+		let holes = document.querySelectorAll('.hole');
+		let img = document.createElement("img");
+		document.body.appendChild(img);
+		img.classList.add('krot');
+		let scoreQuery = document.querySelector('.score');
+		let score = 0;
+
+		lastRand = 0;
+		setInterval(showKrot, 1000)
+
+		function showKrot() 
+		{
+			let rand = Math.floor(Math.random() * holes.length);
+			if(rand != lastRand)
+			{
+				img.src = "mole.svg";
+				img.style.top = holes[rand].getBoundingClientRect().y - 130 + "px";
+				img.style.left = holes[rand].getBoundingClientRect().x + "px";
+			}
+		}
+		img.onclick = function()
+		{
+			if(score > 5)
+			{
+				row.style.display = 'none';
+				img.style.display = 'none';
+				let win = document.createElement('div');
+				document.body.appendChild(win);
+				win.classList.add('win');
+				win.innerHTML = 'You win!';
+			}
+			else
+			{
+				img.style.display = 'none';
+				score++;
+				scoreQuery.textContent = 'СЧЕТ: ' + score;
+				showKrot();
+				img.style.display = 'inline'
+
+			}
+
+		}
+	</script>
+</body>
+</html>
